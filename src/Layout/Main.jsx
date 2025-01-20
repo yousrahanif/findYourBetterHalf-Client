@@ -6,13 +6,17 @@ import NavbarPage from '../pages/Shared/NavbarPage/NavbarPage';
 
 const Main = () => {
     return (
-        <div>
-      <NavbarPage></NavbarPage>
-            <Outlet></Outlet>
-        <FooterPage></FooterPage>
+    
+    <div className="flex flex-col min-h-screen">
+            <NavbarPage />
+            <main className="flex-grow">
+                <Outlet />
+            </main>
+            <FooterPage />
+        </div>
             
            
-        </div>
+     
     );
 };
 

@@ -2,7 +2,7 @@ import { Card } from "flowbite-react";
 import { Rating } from "flowbite-react";
 
 const SuccessStoryCards = ({item}) => {
-    const {_id, coupleImage, marriageDate, reviewStars , storyText}
+    const {_id, successId, coupleImage, marriageDate, reviewStars , storyText}
 =item;
 
 
