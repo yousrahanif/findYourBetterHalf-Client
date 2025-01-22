@@ -39,7 +39,10 @@ const NavbarPage = () => {
               arrowIcon={false}
               inline
               label={
-                <Avatar alt="User settings" img={user.image} rounded />
+                <Avatar alt="User settings" img={user.metadata.photoURL} rounded />
+             
+                // <img src={user.metadata.photoURL} alt="User" style={{ borderRadius: "50%" }} />
+
               }
             >
               <DropdownHeader>

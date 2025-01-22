@@ -5,11 +5,58 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom"; 
 import { div } from "framer-motion/client";
 import { Helmet } from "react-helmet-async";
+import { updateProfile } from "firebase/auth";
 const SignUp = () => {
     const {createUser, signInWithGoogle} = useContext(AuthContext)
-
     const navigate= useNavigate()
-    const handleSignUp=(event)=>{
+  //   const saveUserToDB = async (email) => {
+  //     console.log('Saving user to DB:', email); 
+  //     const response = await fetch('http://localhost:5000/users', {
+  //         method: 'POST',
+  //         headers: { 'Content-Type': 'application/json' },
+  //         body: JSON.stringify({ email, role: 'user' }),
+  //     });
+  //     const data = await response.json();
+  //     console.log('Response from server:', data); 
+  // };
+   
+  
+  
+  
+  
+  // const saveUserToDB = async (email) => {
+  //   const role = 'user'; 
+  //   const member_type = 'normal'; 
+  
+  //   console.log('Saving user to DB:', email, member_type);
+  
+  //   const response = await fetch('http://localhost:5000/users', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/json' },
+  //     body: JSON.stringify({ email, role, member_type }), 
+  //   });
+  
+  //   const data = await response.json();
+  //   console.log('Response from server:', data);
+  // };
+
+  const saveUserToDB = async (email, displayName) => {
+    const role = 'user';
+    const member_type = 'normal';
+  
+    console.log('Saving user to DB:', email, member_type, displayName);
+  
+    const response = await fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, role, member_type, displayName }),
+    });
+  
+    const data = await response.json();
+    console.log('Response from server:', data);
+  };
+  
+  const handleSignUp=(event)=>{
         event.preventDefault()
         const form=event.target;
         const email=form.email.value
@@ -19,24 +66,53 @@ const SignUp = () => {
         console.log(name,email,password,photo)
 
 
-        createUser(email,password)
-.then(result=>{
+//         createUser(email,password)
+// .then(result=>{
 
-  // const user={email: email}
-  // axios.post('https://lost-found-server-site.vercel.app/jwt',user,{
-  //   withCredentials: true
-  // })
-    // console.log(result.user)
+
+//     const user = result.user; 
+
+//     saveUserToDB(user.email, user.displayName);
+
    
+
+//       navigate("/");
+//       Swal.fire({
+//         title: "Good job!",
+//         text: "Register successful!",
+//         icon: "success",
+//       });
+      
     
+    
+//     })
+//     .catch((error) => {
+//       console.error("Profile Update Error:", error.message);
+//       Swal.fire({
+//         icon: "error",
+//         title: "Profile Update Failed",
+//         text: error.message || "Unable to update the profile.",
+//       });
+//     });
+
+  
+createUser(email, password)
+  .then(result => {
+    const user = result.user;
+
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo
+    })
+    .then(() => {
+      saveUserToDB(user.email, user.displayName);
+
       navigate("/");
       Swal.fire({
         title: "Good job!",
         text: "Register successful!",
         icon: "success",
       });
-    
-    
     })
     .catch((error) => {
       console.error("Profile Update Error:", error.message);
@@ -46,9 +122,15 @@ const SignUp = () => {
         text: error.message || "Unable to update the profile.",
       });
     });
-
-  
-
+  })
+  .catch((error) => {
+    console.error("SignUp Error:", error.message);
+    Swal.fire({
+      icon: "error",
+      title: "SignUp Failed",
+      text: error.message || "Unable to sign up.",
+    });
+  });
 
 
     }
@@ -57,7 +139,8 @@ const SignUp = () => {
     const handleGoogleSignIn=()=>{
         signInWithGoogle()
         .then(result=>{
-      
+         
+
      
          
           navigate("/")
@@ -66,7 +149,9 @@ const SignUp = () => {
             text: "Login successful!",
             icon: "success",
           });
-        })
+          const user = result.user; 
+          saveUserToDB(user.email, user.displayName);
+    })
         .catch(error=>{
         
         })
@@ -80,7 +165,7 @@ const SignUp = () => {
                                </Helmet>
           <div className=" flex items-center justify-center mt-10  p-10">
         <div className="w-full max-w-md mx-auto">
-           <h2 className="text-4xl font-bold text-center mb-4">Please Login</h2>
+           <h2 className="text-4xl font-bold text-center mb-4">Please Signup</h2>
             <form onSubmit={handleSignUp} className="flex max-w-md flex-col gap-4 justify-center  border-2  p-4 ">
 
 

@@ -3,56 +3,163 @@ import { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom"; 
-import { div } from "framer-motion/client";
 import { Helmet } from "react-helmet-async";
 const Login = () => {
     const {signInUser, signInWithGoogle} = useContext(AuthContext)
     const navigate = useNavigate();
-    const handleLogin=(event)=>{
-        event.preventDefault()
-        const form=event.target;
-        const email=form.email.value
-        const password=form.password.value
-        console.log(email,password)
-        signInUser(email,password)
-.then(result=>{
 
-  e.target.reset()
-  navigate("/")
-  Swal.fire({
-    title: "Good job!",
-    text: "Login successful!",
-    icon: "success",
-  });
-})
-.catch(error=>{
 
-Swal.fire({
-  icon: "error",
-  title: "Oops...",
-  text: "Something went wrong!",
+//     const saveUserToDB = async (email) => {
+//       console.log('Saving user to DB:', email); 
+//       const response = await fetch('http://localhost:5000/users', {
+//           method: 'POST',
+//           headers: { 'Content-Type': 'application/json' },
+//           body: JSON.stringify({ email, role: 'user' }),
+//       });
+//       const data = await response.json();
+//       console.log('Response from server:', data); 
+//   };
+
+// const saveUserToDB = async (email) => {
+//     const role = 'user'; 
+//     const member_type = 'normal';
   
-});
-})
-    }
+//     console.log('Saving user to DB:', email, member_type);
+  
+//     const response = await fetch('http://localhost:5000/users', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ email, role, member_type }),
+//     });
+  
+//     const data = await response.json();
+//     console.log('Response from server:', data);
+//   };
+const saveUserToDB = async (email, displayName) => {
+  const role = 'user';
+  const member_type = 'normal';
 
-    const handleGoogleSignIn=()=>{
-        signInWithGoogle()
-        .then(result=>{
+  console.log('Saving user to DB:', email, member_type, displayName);
+
+  const response = await fetch('http://localhost:5000/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, role, member_type, displayName }),
+  });
+
+  const data = await response.json();
+  console.log('Response from server:', data);
+};
+  
+
+
+  const handleLogin = (event) => {
+    event.preventDefault(); 
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+  
+    console.log("Email:", email, "Password:", password); 
+  
+    signInUser(email, password) 
+      .then((result) => {
+        console.log("Login successful:", result.user); 
+  
+        form.reset(); 
+  
+        navigate("/"); 
+        Swal.fire({
+          title: "Good job!",
+          text: "Login successful!",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        console.error("Login error:", error); 
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message || "Something went wrong!",
+        });
+      });
+  };
+  
+
+//     const handleLogin=(event)=>{
+//         event.preventDefault()
+//         const form=event.target;
+//         const email=form.email.value
+//         const password=form.password.value
+//         console.log(email,password)
+//         signInUser(email,password)
+// .then(result=>{
+
+
+//   e.target.reset()
+
+//   navigate("/")
+//   Swal.fire({
+//     title: "Good job!",
+//     text: "Login successful!",
+//     icon: "success",
+//   });
+
+// })
+// .catch(error=>{
+
+// Swal.fire({
+//   icon: "error",
+//   title: "Oops...",
+//   text: "Something went wrong!",
+  
+// });
+// })
+//     }
+
+    // const handleGoogleSignIn=()=>{
+    //     signInWithGoogle()
+    //     .then(result=>{
+
       
      
          
-          navigate("/")
-          Swal.fire({
-            title: "Good job!",
-            text: "Login successful!",
-            icon: "success",
-          });
-        })
-        .catch(error=>{
+    //       navigate("/")
+    //       Swal.fire({
+    //         title: "Good job!",
+    //         text: "Login successful!",
+    //         icon: "success",
+    //       });
+    //       saveUserToDB(user.email);
+
+    //     })
+    //     .catch(error=>{
         
-        })
-      }
+    //     })
+    //   }
+
+    const handleGoogleSignIn = () => {
+      signInWithGoogle()
+          .then(result => {
+              const user = result.user; 
+              saveUserToDB(user.email, user.displayName);
+
+              console.log('Google User:', user);
+              // saveUserToDB(user.email); 
+              navigate("/");
+              Swal.fire({
+                  title: "Good job!",
+                  text: "Login successful!",
+                  icon: "success",
+              });
+          })
+          .catch(error => {
+              console.error("Google Sign-In Error:", error.message);
+          });
+  };
+  
+
+
+
     return (
 
 <div>

@@ -17,6 +17,11 @@ import EditBiodata from "../pages/Dashboard/EditBiodata";
 import FavoriteBiodata from "../pages/Dashboard/FavoriteBiodata";
 import AboutUs from "../pages/Shared/AboutUs/AboutUs";
 import ContactUs from "../pages/Shared/ContactUs/ContactUs";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
+import AdminDashboard from "../pages/Dashboard/AdminHome/AdminDashboard";
+import ManageUsers from "../pages/Dashboard/AdminHome/ManageUsers";
+import GotMarried from "../pages/Dashboard/UserHome/GotMarried";
 
 export const router = createBrowserRouter([
     {
@@ -85,11 +90,12 @@ loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}
         <Dashboard></Dashboard>
       </PrivateRoute>,
       children:[
-        // {
-        //   index: true,          
-        //   element: <ViewBiodata />,
-         
-        // },
+       
+        {
+          path: 'userHome',
+          element: <UserHome></UserHome>
+
+        },
         {
           path:'createBiodata',
           element: <PrivateRoute>
@@ -118,7 +124,31 @@ loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}
             <EditBiodata />
           </PrivateRoute>,
           loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.id}`), 
-        }
+        },
+
+        {
+          path: 'adminHome', 
+          element: <AdminHome></AdminHome>
+        },
+        {
+          path:'adminDash', 
+          element: <PrivateRoute>
+            <AdminDashboard></AdminDashboard>
+          </PrivateRoute>
+        },
+        {
+          path:'manageUsers', 
+          element: <PrivateRoute>
+          <ManageUsers></ManageUsers>
+          </PrivateRoute>
+        },
+        {
+          path:'gotMarried', 
+          element: <PrivateRoute>
+         <GotMarried></GotMarried>
+          </PrivateRoute>
+        },
+
         
         
 
