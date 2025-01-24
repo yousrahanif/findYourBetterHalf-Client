@@ -95,9 +95,9 @@ const Dashboard = () => {
                     <Sidebar.Item icon={FaUsers}>
                       <NavLink to="/dashboard/manageUsers">Manage Users</NavLink>
                     </Sidebar.Item>
-                    <Sidebar.Item icon={MdWorkspacePremium}>
+                    {/* <Sidebar.Item icon={MdWorkspacePremium}>
                       <NavLink to="/dashboard/approvedPremium">Approved Premium</NavLink>
-                    </Sidebar.Item>
+                    </Sidebar.Item> */}
                     {/* <Sidebar.Item icon={RiContactsFill}>
                       <NavLink to="/dashboard/approvedContact">Approved Contact</NavLink>
                     </Sidebar.Item> */}
