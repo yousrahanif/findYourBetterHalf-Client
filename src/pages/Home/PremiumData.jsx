@@ -21,7 +21,7 @@ const PremiumData = () => {
         fetch("https://matrimony-server-eight.vercel.app/biodata")
             .then(res => res.json())
             .then(data => {
-                console.log(data); // Inspect the response
+                console.log(data);
                 if (Array.isArray(data.result)) {
                     const premiumData = data.result.filter(item => item.member_type === "premium" || item.member_type === "Premium");
                     setPremium(premiumData);
