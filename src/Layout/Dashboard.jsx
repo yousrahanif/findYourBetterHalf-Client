@@ -76,9 +76,9 @@ const Dashboard = () => {
                     <Sidebar.Item icon={MdOutlinePreview}>
                       <Link to="/dashboard/viewBiodata">View Biodata</Link>
                     </Sidebar.Item>
-                    <Sidebar.Item icon={IoIosContacts}>
-                      My Contact Request
-                    </Sidebar.Item>
+                    {/* <Sidebar.Item icon={IoIosContacts}>
+                    <Link to="/dashboard/myContactReq">My Contact Req</Link>
+                    </Sidebar.Item> */}
                     <Sidebar.Item icon={MdFavoriteBorder}>
                       <Link to="/dashboard/favoriteBiodata">Favorite Biodata</Link>
                     </Sidebar.Item>
@@ -98,9 +98,9 @@ const Dashboard = () => {
                     <Sidebar.Item icon={MdWorkspacePremium}>
                       <NavLink to="/dashboard/approvedPremium">Approved Premium</NavLink>
                     </Sidebar.Item>
-                    <Sidebar.Item icon={RiContactsFill}>
+                    {/* <Sidebar.Item icon={RiContactsFill}>
                       <NavLink to="/dashboard/approvedContact">Approved Contact</NavLink>
-                    </Sidebar.Item>
+                    </Sidebar.Item> */}
                     <Sidebar.Item icon={GiLovers}>
                       <NavLink to="/dashboard/loveStory">Success Story</NavLink>
                     </Sidebar.Item>

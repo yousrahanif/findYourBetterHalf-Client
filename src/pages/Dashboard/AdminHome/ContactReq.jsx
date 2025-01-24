@@ -6,7 +6,6 @@ const ContactReq = () => {
   const [payments, setPayments] = useState([]);
 
   useEffect(() => {
-    // Fetch payment data from the server
     fetch('https://matrimony-server-eight.vercel.app/payments')
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +22,6 @@ const ContactReq = () => {
   }, []);
 
   const handleApprove = (email) => {
-    // Send a PATCH request to update the member_type to premium
     fetch('https://matrimony-server-eight.vercel.app/api/users/make-premium', {
       method: 'PATCH',
       headers: {
@@ -40,7 +38,6 @@ const ContactReq = () => {
             text: `User with email ${email} has been upgraded to Premium.`,
           });
 
-          // Update the local state to reflect the change
           setPayments((prev) =>
             prev.map((payment) =>
               payment.email === email
@@ -65,6 +62,63 @@ const ContactReq = () => {
         });
       });
   };
+
+
+  // const handleApprove = (email) => {
+  //   // Step 1: Update member type to premium
+  //   fetch('https://matrimony-server-eight.vercel.app/api/users/make-premium', {
+  //     method: 'PATCH',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ email }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.modifiedCount > 0) {
+  //         // Step 2: Add to approvedContactsCollection
+  //         return fetch('https://matrimony-server-eight.vercel.app/api/approved-contacts', {
+  //           method: 'POST',
+  //           headers: {
+  //             'Content-Type': 'application/json',
+  //           },
+  //           body: JSON.stringify({ email }),
+  //         });
+  //       } else {
+  //         throw new Error(data.message || 'Failed to update member type.');
+  //       }
+  //     })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.insertedId > 0) {
+  //         Swal.fire({
+  //           icon: 'success',
+  //           title: 'Success',
+  //           text: `User with email ${email} has been upgraded to Premium and added to Approved Contacts.`,
+  //         });
+  
+  //         setPayments((prev) =>
+  //           prev.map((payment) =>
+  //             payment.email === email
+  //               ? { ...payment, member_type: 'premium' }
+  //               : payment
+  //           )
+  //         );
+  //       } else {
+  //         throw new Error(data.message || 'Failed to add to approved contacts.');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Error',
+  //         text: error.message || 'An error occurred.',
+  //       });
+  //     });
+  // };
+  
+
 
   return (
     <div className="mx-auto w-11/12 p-4">
