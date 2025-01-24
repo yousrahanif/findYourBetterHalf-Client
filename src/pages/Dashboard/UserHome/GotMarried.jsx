@@ -24,7 +24,6 @@ const GotMarried = () => {
       reviewStars: review,
     };
 
-    // Send data to the server
     fetch('http://localhost:5000/success', {
       method: 'POST',
       headers: {
@@ -40,6 +39,12 @@ const GotMarried = () => {
             text: 'Your story has been shared successfully.',
             icon: 'success',
           });
+          setSelfBiodataId('');
+          setPartnerBiodataId('');
+          setUrl('');
+          setMarriageDate('');
+          setSuccessStory('');
+          setReview('');
         }
       })
       .catch((err) => {

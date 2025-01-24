@@ -253,7 +253,6 @@ import { useLoaderData, Link } from 'react-router-dom';
 import { Card } from 'flowbite-react';
 import { FaRegHeart } from "react-icons/fa";
 import { AuthContext } from '../../providers/AuthProvider';
-import AllBiodataCards from './AllBiodataCards';
 import Swal from 'sweetalert2';
 import SimilarBiodataCards from './SimilarBiodataCards';
 

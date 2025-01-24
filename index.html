@@ -5,6 +5,18 @@
     <link rel="icon" type="image/svg+xml" href="/logo.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LoveForever</title>
+    <script type="module">
+      const PAYPAL_CLIENT_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID; // Importing from .env
+      if (PAYPAL_CLIENT_ID) {
+        const script = document.createElement("script");
+        script.src = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&currency=USD`;
+        script.async = true;
+        document.head.appendChild(script);
+      } else {
+        console.error("PayPal Client ID is missing. Please check your .env file.");
+      }
+    </script>
+    
   </head>
   <body>
     <div id="root"></div>

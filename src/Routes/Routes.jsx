@@ -9,7 +9,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import BiodataDetails from "../pages/Biodata/BiodataDetails";
 import PrivateRoute from "./PrivateRoute";
-import Checkout from "../pages/Biodata/Checkout";
+import Checkout from "../components/Checkout";
 import Dashboard from "../Layout/Dashboard";
 import CreateBiodata from "../pages/Dashboard/CreateBiodata";
 import ViewBiodata from "../pages/Dashboard/ViewBiodata";
@@ -22,6 +22,8 @@ import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 import AdminDashboard from "../pages/Dashboard/AdminHome/AdminDashboard";
 import ManageUsers from "../pages/Dashboard/AdminHome/ManageUsers";
 import GotMarried from "../pages/Dashboard/UserHome/GotMarried";
+import LoveStory from "../pages/Dashboard/AdminHome/LoveStory";
+import ContactReq from "../pages/Dashboard/AdminHome/ContactReq";
 
 export const router = createBrowserRouter([
     {
@@ -80,6 +82,7 @@ loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}
         element: <ContactUs></ContactUs>
 
       }, 
+      
       
       ]
     },
@@ -147,6 +150,18 @@ loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}
           element: <PrivateRoute>
          <GotMarried></GotMarried>
           </PrivateRoute>
+        },
+        {
+          path:'loveStory', 
+          element: <PrivateRoute>
+<LoveStory></LoveStory>         
+ </PrivateRoute>
+        },
+        {
+          path:'approvedContact', 
+          element: <PrivateRoute>
+<ContactReq></ContactReq>     
+ </PrivateRoute>
         },
 
         

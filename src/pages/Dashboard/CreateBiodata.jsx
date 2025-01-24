@@ -50,7 +50,8 @@ date_of_birth,
             expected_partner_height,
             expected_partner_weight,
             contact_email,
-            mobile_number
+            mobile_number,
+            member_type: "normal",
         };
         
    
@@ -301,18 +302,6 @@ date_of_birth,
 
 
 
-                {/* <div>
-                    <div className="mb-2 block">
-                        <Label htmlFor="presentDivision" value="Present Division Name" />
-                    </div>
-                    <TextInput
-                        id="presentDivision"
-                        name="presentDivision"
-                        type="text"
-                        placeholder="Enter your present division"
-                        required
-                    />
-                </div> */}
                 
 
                 

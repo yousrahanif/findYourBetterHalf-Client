@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ViewBiodata = () => {
-  const { user, loading } = useContext(AuthContext); // Getting the logged-in user
+  const { user, loading } = useContext(AuthContext); 
   const [biodata, setBiodata] = useState([]);
 
   useEffect(() => {
@@ -13,6 +14,86 @@ const ViewBiodata = () => {
         .then((data) => setBiodata(data))
     }
   }, [user]);
+
+
+  // const handleMakePremium = (bio) => {
+  //   fetch('http://localhost:5000/biodata/makePremium', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({ 
+
+  //       bioId: bio._id,
+  //       user_email: user?.email,
+       
+  //      }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.insertedId>0) {
+  //         Swal.fire({
+  //           icon: 'success',
+  //           title: 'User has been made Premium',
+  //           text: `Inserted ID: ${data.insertedId}`,
+  //         });
+  //       } else {
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Failed to make premium',
+  //           text: data.message || 'Something went wrong',
+  //         });
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error:', error);
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Something went wrong',
+  //         text: 'Please try again later',
+  //       });
+  //     });
+  // };
+
+
+  const handleMakePremium = (bio) => {
+    fetch('http://localhost:5000/biodata/makePremium', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+
+      
+        email: user?.email, 
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Request Sent to be Premium',
+           
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Failed to make premium',
+            text: data.message || 'Something went wrong',
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Something went wrong',
+          text: 'Please try again later',
+        });
+      });
+  };
+  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -62,7 +143,9 @@ const ViewBiodata = () => {
            </div>
            <div>
            <Link  >
-  <button  className="rounded-lg bg-red-500 px-5 py-2.5 m-2 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-900 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+  <button  onClick={() => handleMakePremium(bio._id)}
+
+    className="rounded-lg bg-red-500 px-5 py-2.5 m-2 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-900 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
      Make Premium
   </button>
 </Link>
