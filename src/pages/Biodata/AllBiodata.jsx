@@ -100,6 +100,7 @@
 // };
 
 // export default AllBiodata;
+//
 
 
 import React, { useEffect, useState } from "react";
