@@ -1,9 +1,10 @@
-Website Name: LoveForver
-Admin: 
-    username: bio@data.com
-    password: biodata
-Live Url: https://matrimony-351f1.web.app/
+# Website Details
 
+**Website Name:** LoveForver  
+**Admin:**  
+    - **Username:** bio@data.com  
+    - **Password:** biodata  
+**Live URL:** [https://matrimony-351f1.web.app/](https://matrimony-351f1.web.app/)
 
 LoveForever is a platform designed to connect people by providing a seamless and interactive biodata-sharing experience. Below are the key features of the platform:
 
