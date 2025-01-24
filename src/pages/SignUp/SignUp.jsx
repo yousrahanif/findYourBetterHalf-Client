@@ -11,7 +11,7 @@ const SignUp = () => {
     const navigate= useNavigate()
   //   const saveUserToDB = async (email) => {
   //     console.log('Saving user to DB:', email); 
-  //     const response = await fetch('http://localhost:5000/users', {
+  //     const response = await fetch('https://matrimony-server-eight.vercel.app/users', {
   //         method: 'POST',
   //         headers: { 'Content-Type': 'application/json' },
   //         body: JSON.stringify({ email, role: 'user' }),
@@ -30,7 +30,7 @@ const SignUp = () => {
   
   //   console.log('Saving user to DB:', email, member_type);
   
-  //   const response = await fetch('http://localhost:5000/users', {
+  //   const response = await fetch('https://matrimony-server-eight.vercel.app/users', {
   //     method: 'POST',
   //     headers: { 'Content-Type': 'application/json' },
   //     body: JSON.stringify({ email, role, member_type }), 
@@ -46,7 +46,7 @@ const SignUp = () => {
   
     console.log('Saving user to DB:', email, member_type, displayName);
   
-    const response = await fetch('http://localhost:5000/users', {
+    const response = await fetch('https://matrimony-server-eight.vercel.app/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, role, member_type, displayName }),

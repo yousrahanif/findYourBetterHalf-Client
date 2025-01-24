@@ -24,7 +24,7 @@ const GotMarried = () => {
       reviewStars: review,
     };
 
-    fetch('http://localhost:5000/success', {
+    fetch('https://matrimony-server-eight.vercel.app/success', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

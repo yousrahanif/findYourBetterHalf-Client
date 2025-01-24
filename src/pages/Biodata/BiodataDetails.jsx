@@ -25,14 +25,14 @@
   
   
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/biodata/similar/${_id}`)
+//     fetch(`https://matrimony-server-eight.vercel.app/biodata/similar/${_id}`)
 //       .then((res) => res.json())
 //       .then((data) => setSimilarBiodata(data))
 //       .catch((err) => console.error('Error fetching similar biodata:', err));
 
 
 //       if (user?.email) {
-//         fetch(`http://localhost:5000/favorites/user?email=${user.email}`)
+//         fetch(`https://matrimony-server-eight.vercel.app/favorites/user?email=${user.email}`)
 //           .then((response) => response.json())
 //           .then((data) => {
 //             const favoriteBiodataIds = data.map(fav => fav.biodataId);
@@ -90,7 +90,7 @@
       
 //     };
 
-//     fetch('http://localhost:5000/favorites', {
+//     fetch('https://matrimony-server-eight.vercel.app/favorites', {
 //       method: 'POST',
 //       headers: {
 //         'Content-Type': 'application/json',
@@ -268,14 +268,14 @@ const BiodataDetails = () => {
 
   useEffect(() => {
     // Fetch similar biodata
-    fetch(`http://localhost:5000/biodata/similar/${_id}`)
+    fetch(`https://matrimony-server-eight.vercel.app/biodata/similar/${_id}`)
       .then((res) => res.json())
       .then((data) => setSimilarBiodata(data))
       .catch((err) => console.error('Error fetching similar biodata:', err));
 
     // Check if the user is logged in and fetch their favorites
     if (user?.email) {
-      fetch(`http://localhost:5000/favorites/user?email=${user.email}`)
+      fetch(`https://matrimony-server-eight.vercel.app/favorites/user?email=${user.email}`)
         .then((response) => response.json())
         .then((data) => {
           const favoriteBiodataIds = data.map(fav => fav.biodataId);
@@ -288,7 +288,7 @@ const BiodataDetails = () => {
         .catch((err) => console.error('Error fetching favorites:', err));
 
       // Fetch user details to check if they are premium or normal
-      fetch(`http://localhost:5000/users`)
+      fetch(`https://matrimony-server-eight.vercel.app/users`)
         .then((response) => response.json())
         .then((users) => {
           const currentUser = users.find(u => u.email === user.email);
@@ -331,7 +331,7 @@ const BiodataDetails = () => {
       profile_image,
     };
 
-    fetch('http://localhost:5000/favorites', {
+    fetch('https://matrimony-server-eight.vercel.app/favorites', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

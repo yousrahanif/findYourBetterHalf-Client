@@ -20,7 +20,7 @@
 //         '51-70': [51, 70]
 //     };   
 //      useEffect(()=>{
-//             fetch("http://localhost:5000/biodata")
+//             fetch("https://matrimony-server-eight.vercel.app/biodata")
 //             .then(res=>res.json())
 //             .then(data=>{
 //                 setBiodata(data)
@@ -133,7 +133,7 @@ const AllBiodata = () => {
                 page: currentPage,
                 limit: limit
             });
-            const response = await fetch(`http://localhost:5000/biodata?${filters.toString()}`);
+            const response = await fetch(`https://matrimony-server-eight.vercel.app/biodata?${filters.toString()}`);
             const data = await response.json();
             setBiodata(data.result);
             setTotalCount(data.totalCount);

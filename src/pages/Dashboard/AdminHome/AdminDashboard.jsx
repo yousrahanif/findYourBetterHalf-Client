@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
     useEffect(() => {
         const fetchCounters = () => {
-            fetch('http://localhost:5000/successCounter')
+            fetch('https://matrimony-server-eight.vercel.app/successCounter')
             .then((response) => response.json())
                 .then((data) => {
                     if (data) {

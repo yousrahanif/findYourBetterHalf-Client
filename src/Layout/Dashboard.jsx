@@ -26,7 +26,7 @@ const Dashboard = () => {
   useEffect(() => {
     if (user?.email) {
   
-      fetch(`http://localhost:5000/users/${user.email}`)
+      fetch(`https://matrimony-server-eight.vercel.app/users/${user.email}`)
         .then((res) => {
           if (res.ok) {
             return res.json(); 

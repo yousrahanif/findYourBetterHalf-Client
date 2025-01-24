@@ -6,7 +6,7 @@ const LoveStory = () => {
     const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/success')
+    fetch('https://matrimony-server-eight.vercel.app/success')
       .then((res) => res.json())
       .then((data) => setStories(data))
       .catch((error) => {

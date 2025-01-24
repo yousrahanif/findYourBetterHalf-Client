@@ -7,14 +7,32 @@ const PremiumData = () => {
     const [premium, setPremium] = useState([]);
     const [sortOrder, setSortOrder] = useState("Ascending");
 
+    // useEffect(() => {
+    //     fetch("https://matrimony-server-eight.vercel.app/biodata")
+
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         const premiumData = data.filter(item => item.member_type === "premium" || item.member_type === "Premium");
+    //         setPremium(premiumData);
+    //     });
+    // }, []);
+
     useEffect(() => {
-        fetch("http://localhost:5000/biodata")
-        .then(res => res.json())
-        .then(data => {
-            const premiumData = data.filter(item => item.member_type === "premium" || item.member_type === "Premium");
-            setPremium(premiumData);
-        });
+        fetch("https://matrimony-server-eight.vercel.app/biodata")
+            .then(res => res.json())
+            .then(data => {
+                console.log(data); // Inspect the response
+                if (Array.isArray(data.result)) {
+                    const premiumData = data.result.filter(item => item.member_type === "premium" || item.member_type === "Premium");
+                    setPremium(premiumData);
+                } else {
+                    console.error("Expected 'result' to be an array but received:", data.result);
+                }
+            })
+            .catch(err => console.error("Error fetching biodata:", err));
     }, []);
+    
+    
 
     const sortPremiumData=(order)=>{
         const sortedData=[...premium].sort((a,b)=>{

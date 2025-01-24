@@ -8,7 +8,7 @@ const SuccessStory = () => {
           const [sortOrder, setSortOrder] = useState("Ascending");
       
         useEffect(()=>{
-            fetch("http://localhost:5000/success")
+            fetch("https://matrimony-server-eight.vercel.app/success")
             .then(res=>res.json())
             .then(data=>{
                 // const successData=data.filter(item=>item.Member_Type==="Premium")

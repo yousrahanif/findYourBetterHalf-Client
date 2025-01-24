@@ -55,7 +55,7 @@ date_of_birth,
         };
         
    
-        fetch('http://localhost:5000/biodata',{
+        fetch('https://matrimony-server-eight.vercel.app/biodata',{
             method:'POST', 
             headers:{
                 'content-type':'application/json'

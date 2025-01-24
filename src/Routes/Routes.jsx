@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
           <BiodataDetails></BiodataDetails>
 
         </PrivateRoute>,
-      loader: ({params})=>fetch(`http://localhost:5000/biodata/${params.id}`)
+      loader: ({params})=>fetch(`https://matrimony-server-eight.vercel.app/biodata/${params.id}`)
 
       }, 
       {
@@ -54,7 +54,7 @@ export const router = createBrowserRouter([
         element: <PrivateRoute>
           <Checkout></Checkout>
         </PrivateRoute>,
-loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}`)
+loader: ({ params }) => fetch(`https://matrimony-server-eight.vercel.app/biodata/${params.biodataId}`)
 },
 
 
@@ -126,7 +126,7 @@ loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.biodataId}
           element: <PrivateRoute>
             <EditBiodata />
           </PrivateRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/biodata/${params.id}`), 
+          loader: ({ params }) => fetch(`https://matrimony-server-eight.vercel.app/biodata/${params.id}`), 
         },
 
         {

@@ -9,7 +9,7 @@ const EditBiodata = () => {
   const [biodata, setBiodata] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/biodata/${id}`)
+    fetch(`https://matrimony-server-eight.vercel.app/biodata/${id}`)
       .then((response) => response.json())
       .then((data) => setBiodata(data));
   }, [id]);
@@ -38,7 +38,7 @@ const EditBiodata = () => {
       mobile_number: form.mobileNumber?.value || '',
     };
 
-    fetch(`http://localhost:5000/biodata/${id}`, {
+    fetch(`https://matrimony-server-eight.vercel.app/biodata/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedBio),
@@ -271,7 +271,7 @@ export default EditBiodata;
 //   const divisions = ["Dhaka", "Chittagong", "Khulna", "Rajshahi", "Barisal", "Sylhet", "Rangpur", "Mymensingh"]; // Division names
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/biodata/${id}`)
+//     fetch(`https://matrimony-server-eight.vercel.app/biodata/${id}`)
 //       .then((response) => response.json())
 //       .then((data) => setBiodata(data));
 //   }, [id]);
@@ -300,7 +300,7 @@ export default EditBiodata;
 //       mobile_number: form.mobileNumber?.value || '',
 //     };
 
-//     fetch(`http://localhost:5000/biodata/${id}`, {
+//     fetch(`https://matrimony-server-eight.vercel.app/biodata/${id}`, {
 //       method: 'PUT',
 //       headers: { 'Content-Type': 'application/json' },
 //       body: JSON.stringify(updatedBio),

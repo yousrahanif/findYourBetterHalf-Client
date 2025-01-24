@@ -7,7 +7,7 @@ const ContactReq = () => {
 
   useEffect(() => {
     // Fetch payment data from the server
-    fetch('http://localhost:5000/payments')
+    fetch('https://matrimony-server-eight.vercel.app/payments')
       .then((res) => res.json())
       .then((data) => {
         setPayments(data);
@@ -24,7 +24,7 @@ const ContactReq = () => {
 
   const handleApprove = (email) => {
     // Send a PATCH request to update the member_type to premium
-    fetch('http://localhost:5000/api/users/make-premium', {
+    fetch('https://matrimony-server-eight.vercel.app/api/users/make-premium', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

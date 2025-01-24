@@ -6,7 +6,7 @@
 //   const [users, setUsers] = useState([]);
 
 //   useEffect(() => {
-//     fetch('http://localhost:5000/users')
+//     fetch('https://matrimony-server-eight.vercel.app/users')
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setUsers(data); 
@@ -22,7 +22,7 @@
 //   }, []);
 
 //   const handleMakeAdmin = (userId) => {
-//     fetch(`http://localhost:5000/users/make-admin/${userId}`, {
+//     fetch(`https://matrimony-server-eight.vercel.app/users/make-admin/${userId}`, {
 //       method: 'PATCH',
 //       headers: { 'Content-Type': 'application/json' },
 //     })
@@ -97,7 +97,7 @@
 
 //   // Fetch users on component mount
 //   useEffect(() => {
-//     fetch('http://localhost:5000/users')
+//     fetch('https://matrimony-server-eight.vercel.app/users')
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setUsers(data);
@@ -113,7 +113,7 @@
 //   }, []);
 
 //   const handleUpgradeMembership = (userId) => {
-//     fetch(`http://localhost:5000/users/update-membership/${userId}`, {
+//     fetch(`https://matrimony-server-eight.vercel.app/users/update-membership/${userId}`, {
 //       method: 'PATCH',
 //       headers: { 'Content-Type': 'application/json' },
 //       body: JSON.stringify({ role: 'admin' }), 
@@ -198,7 +198,7 @@
 //   const [paidEmails, setPaidEmails] = useState([]);
 
 //   useEffect(() => {
-//     fetch('http://localhost:5000/users')
+//     fetch('https://matrimony-server-eight.vercel.app/users')
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setUsers(data);
@@ -212,7 +212,7 @@
 //         });
 //       });
 
-//     // fetch('http://localhost:5000/payments')
+//     // fetch('https://matrimony-server-eight.vercel.app/payments')
 //     //   .then((res) => res.json())
 //     //   .then((data) => {
 //     //     const emails = data.map((payment) => payment.email);
@@ -228,7 +228,7 @@
 //     //   });
 
 
-//     fetch('http://localhost:5000/premiumCollection')
+//     fetch('https://matrimony-server-eight.vercel.app/premiumCollection')
 //     .then((res) => res.json())
 //     .then((data) => {
 //       const emails = data.map((payment) => payment.email);
@@ -246,7 +246,7 @@
 
 
 //   const handleAdmin = (userId) => {
-//         fetch(`http://localhost:5000/users/update-membership/${userId}`, {
+//         fetch(`https://matrimony-server-eight.vercel.app/users/update-membership/${userId}`, {
 //           method: 'PATCH',
 //           headers: { 'Content-Type': 'application/json' },
 //           body: JSON.stringify({ role: 'admin' }), 
@@ -283,7 +283,7 @@
 //       };
 
 //   const handleMakePremium = (email) => {
-//     fetch('http://localhost:5000/api/biodata/make-premium', {
+//     fetch('https://matrimony-server-eight.vercel.app/api/biodata/make-premium', {
 //       method: 'PATCH',
 //       headers: { 'Content-Type': 'application/json' },
 //       body: JSON.stringify({ email }),
@@ -378,7 +378,7 @@ const ManageUsers = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/users')
+    fetch('https://matrimony-server-eight.vercel.app/users')
       .then((res) => res.json())
       .then((data) => {
         setUsers(data);
@@ -397,7 +397,7 @@ const ManageUsers = () => {
     
   }, []);
   useEffect(() => {
-    fetch('http://localhost:5000/premiumCollection')
+    fetch('https://matrimony-server-eight.vercel.app/premiumCollection')
       .then((res) => res.json())
       .then((data) => {
         const emails = data.map((user) => user.email);
@@ -415,7 +415,7 @@ const ManageUsers = () => {
 
 
   const handleAdmin = (userId) => {
-        fetch(`http://localhost:5000/users/update-membership/${userId}`, {
+        fetch(`https://matrimony-server-eight.vercel.app/users/update-membership/${userId}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ role: 'admin' }), 
@@ -452,7 +452,7 @@ const ManageUsers = () => {
       };
 
       const handleMakePremium = (contactEmail) => {
-        fetch(`http://localhost:5000/biodata/update-member-type`, {
+        fetch(`https://matrimony-server-eight.vercel.app/biodata/update-member-type`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ contact_email: contactEmail, member_type: 'premium' }),
