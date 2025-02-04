@@ -8,6 +8,11 @@
 
 LoveForever is a platform designed to connect people by providing a seamless and interactive biodata-sharing experience. Below are the key features of the platform:
 
+## Main Tech
+1. React (Frontend)
+2. Tailwind CSS and FlowBite (Styling)
+3. Firebase (Authentication, Firestore Database, Hosting)
+
 ## User Features
 1. **View All Biodata**  
    Users can browse through a wide range of biodata profiles to find their perfect match.
@@ -42,3 +47,9 @@ LoveForever is a platform designed to connect people by providing a seamless and
 
 11. **Upgrade to Premium Membership**  
     Admins can manage premium memberships, upgrading users to premium members upon payment or request.
+
+## Step to run
+1. git clone https://github.com/yousrahanif/findYourBetterHalf-Client.git
+2. cd findYourBetterHalf-Client
+3. npm install
+4. npm run dev
