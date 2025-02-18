@@ -48,9 +48,16 @@ LoveForever is a platform designed to connect people by providing a seamless and
 11. **Upgrade to Premium Membership**  
     Admins can manage premium memberships, upgrading users to premium members upon payment or request.
 
+## Admin
+Admin Email: bio@data.com
+Admin Password: biodata
+
+## User:
+User Email: user@user.com
+User Password: User123
+
 ## Step to run
 1. git clone https://github.com/yousrahanif/findYourBetterHalf-Client.git
 2. cd findYourBetterHalf-Client
 3. npm install
 4. npm run dev
-////
