@@ -53,4 +53,3 @@ LoveForever is a platform designed to connect people by providing a seamless and
 2. cd findYourBetterHalf-Client
 3. npm install
 4. npm run dev
-//
