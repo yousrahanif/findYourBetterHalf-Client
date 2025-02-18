@@ -7,21 +7,30 @@ import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { Sidebar } from 'flowbite-react';
 import DashboardNav from './DashboardNav';
 import { IoCreateOutline } from 'react-icons/io5';
-import { MdOutlinePreview, MdFavoriteBorder, MdWorkspacePremium } from 'react-icons/md';
+import { MdOutlinePreview, MdFavoriteBorder, MdWorkspacePremium, MdAdminPanelSettings } from 'react-icons/md';
 import { IoIosContacts, IoIosLogOut } from 'react-icons/io';
 import { AuthContext } from '../providers/AuthProvider';
 import { RiAdminLine, RiContactsFill } from 'react-icons/ri';
 import { FaUsers } from 'react-icons/fa';
 import { GiLovers } from "react-icons/gi";
+import { HiOutlineUserCircle } from 'react-icons/hi';
 
 
-import Swal from 'sweetalert2';
+
 
 const Dashboard = () => {
   const { user, signOutUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const [userRole, setUserRole] = useState(null);
+
+
+
+
+  const [activeNavItem, setActiveNavItem] = useState(null);
+
+
+
 
   useEffect(() => {
     if (user?.email) {
@@ -60,6 +69,28 @@ const Dashboard = () => {
       });
   };
 
+
+ 
+  useEffect(() => {
+    if (userRole) {
+      let defaultRoute;
+      if (userRole === 'normal') {
+        defaultRoute = '/dashboard/profile/user';
+      } else if (userRole === 'admin') {
+        defaultRoute = '/dashboard/profile/admin'; 
+      }
+
+      setActiveNavItem(defaultRoute);  
+
+
+      navigate(defaultRoute, { replace: true }); 
+    }
+  }, [userRole, navigate]); 
+
+
+
+
+
   return (
     <div className="mx-auto w-11/12">
       <DashboardNav />
@@ -70,6 +101,9 @@ const Dashboard = () => {
               <Sidebar.ItemGroup>
                 {userRole === 'normal' && (
                   <>
+                   <Sidebar.Item icon={HiOutlineUserCircle}>
+                      <NavLink to="/dashboard/profile/user">Profile</NavLink>
+                    </Sidebar.Item>
                     <Sidebar.Item icon={IoCreateOutline}>
                       <Link to="/dashboard/createBiodata">Create Biodata</Link>
                     </Sidebar.Item>
@@ -85,10 +119,15 @@ const Dashboard = () => {
                     <Sidebar.Item icon={GiLovers}>
                       <Link to="/dashboard/gotMarried">Got Married</Link>
                     </Sidebar.Item>
+
+                   
                   </>
                 )}
                 {userRole === 'admin' && (
                   <>
+                   <Sidebar.Item icon={MdAdminPanelSettings}>
+                      <NavLink to="/dashboard/profile/admin">Admin Profile</NavLink>
+                    </Sidebar.Item>
                     <Sidebar.Item icon={RiAdminLine}>
                       <NavLink to="/dashboard/adminDash">Admin Dashboard</NavLink>
                     </Sidebar.Item>
@@ -104,6 +143,10 @@ const Dashboard = () => {
                     <Sidebar.Item icon={GiLovers}>
                       <NavLink to="/dashboard/loveStory">Success Story</NavLink>
                     </Sidebar.Item>
+
+
+
+                   
                   </>
                 )}
                 <Sidebar.Item icon={IoIosLogOut}>

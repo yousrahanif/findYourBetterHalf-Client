@@ -32,7 +32,7 @@ const LoveStory = () => {
 
   return (
     <div className="mx-auto w-11/12 p-4">
-      <h1 className="text-2xl font-bold mb-4">Success Stories</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Success Stories</h1>
       <Table striped={true}>
         <Table.Head>
           <Table.HeadCell>Self Biodata ID</Table.HeadCell>
@@ -47,7 +47,9 @@ const LoveStory = () => {
               <Table.Cell>
                 <Button
                   size="xs"
-                  color="purple"
+                  color="red"
+                  className='bg-red-500 font-bold'
+
                   onClick={() => handleViewStory(story)}
                 >
                   View Story

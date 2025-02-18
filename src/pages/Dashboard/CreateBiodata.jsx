@@ -375,7 +375,7 @@ readOnly disabled
                     />
                 </div> 
               
-                <Button type="submit">Save and Publish</Button>
+                <Button type="submit" className='bg-red-500 text-black'>Save and Publish</Button>
             </form>
         </div>
     );

@@ -4,7 +4,6 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
-// Register the required components for Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const AdminDashboard = () => {
@@ -45,7 +44,7 @@ const AdminDashboard = () => {
                   counters.totalBoys,
                   counters.totalMarriages,
                   counters.totalRevenue,
-                  counters.totalPremium, // Add this field
+                  counters.totalPremium, 
               ],
               backgroundColor: ['#3498db', '#e91e63', '#2ecc71', '#f39c12', '#f1c40f', '#9b59b6'], // You can add a color for totalPremium
           },

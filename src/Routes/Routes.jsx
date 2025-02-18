@@ -25,6 +25,7 @@ import GotMarried from "../pages/Dashboard/UserHome/GotMarried";
 import LoveStory from "../pages/Dashboard/AdminHome/LoveStory";
 import ContactReq from "../pages/Dashboard/AdminHome/ContactReq";
 import MyContactReq from "../pages/Dashboard/UserHome/MyContactReq";
+import ProfileData from "../pages/Dashboard/ProfileData";
 
 export const router = createBrowserRouter([
     {
@@ -169,6 +170,12 @@ loader: ({ params }) => fetch(`https://matrimony-server-eight.vercel.app/biodata
           path:'approvedContact', 
           element: <PrivateRoute>
 <ContactReq></ContactReq>     
+ </PrivateRoute>
+        },
+        {
+          path:'profile/:userType', 
+          element: <PrivateRoute>
+<ProfileData></ProfileData>      
  </PrivateRoute>
         },
 

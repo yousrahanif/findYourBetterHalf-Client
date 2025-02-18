@@ -68,7 +68,7 @@ const FavoriteBiodata = () => {
   }
 
   if (!favorite.length) {
-    return <div>No biodata found.</div>;
+    return <div className='text-center'> No Favorite biodata added.</div>;
   }
 
   return (

@@ -102,7 +102,7 @@ const ViewBiodata = () => {
   
 
   if (!biodata.length) {
-    return <div>No biodata found.</div>;
+    return <div className='text-center'>No biodata found.</div>;
   }
 
   return (
