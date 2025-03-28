@@ -82,7 +82,7 @@ date_of_birth,
     };
 
     return (
-        <div>
+        <div className='mx-auto w-10/12'>
             <form onSubmit={handleCreateBio} className="flex max-w-md flex-col gap-4">
                 {/* <div>
                     <div className="mb-2 block">
@@ -306,7 +306,7 @@ date_of_birth,
 
                 
 
-                <div>
+                <div >
                     <div className="mb-2 block">
                         <Label htmlFor="partnerAge" value="Expected Partner Age" />
                     </div>
@@ -362,7 +362,7 @@ readOnly disabled
                     />
                 </div>
 
-                <div>
+                <div >
                     <div className="mb-2 block">
                         <Label htmlFor="mobileNumber" value="Mobile Number" />
                     </div>

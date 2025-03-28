@@ -1,7 +1,7 @@
 import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink } from 'flowbite-react';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../src/assets/logo.jpg'
+import logo from '../../src/assets/logo.png'
 
 
 const DashboardNav = () => {

@@ -27,17 +27,17 @@ const SuccessStory = () => {
             setSortOrder(order);
         };
     return (
-        <section>
-            <SectionTitle heading={"Success Story"} />
+        <section className='mt-14'>
+            <SectionTitle heading={"Marriage Story"} />
             
             <div className="flex flex-col items-center mb-6">
-                <Dropdown label={'Sort by Success Date'} dismissOnClick={false} style={{ backgroundColor: '#ef4444' }}>
+                <Dropdown label={'Sort by Date'} dismissOnClick={false} style={{ backgroundColor: '#ef4444' }}>
                     <Dropdown.Item onClick={() => sortedSuccessStory('Ascending')}>Ascending</Dropdown.Item>
                     <Dropdown.Item onClick={() => sortedSuccessStory('Descending')}>Descending</Dropdown.Item>
                 </Dropdown>
             </div>
             
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center  w-10/12 mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {success.map(item => (
                         <SuccessStoryCards key={item._id} item={item} />

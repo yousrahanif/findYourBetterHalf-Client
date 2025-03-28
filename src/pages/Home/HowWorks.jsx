@@ -8,10 +8,10 @@ import happy from '../../assets/how-works/happy.avif'
 
 const HowWorks = () => {
     return (
-        <div>
+        <div className="mt-14">
             <SectionTitle
 
-                heading={"Find Your Perfect Match"}
+                heading={"Perfect Match"}
             ></SectionTitle>
             <div className="w-10/12 mx-auto">
                 <Timeline horizontal>

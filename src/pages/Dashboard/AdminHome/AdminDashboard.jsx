@@ -64,30 +64,30 @@ const AdminDashboard = () => {
                 <div className="mt-4">
                     <Card>
                         <div className="grid grid-cols-2 gap-4 text-center">
-                            <div className="bg-blue-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Biodata</p>
-                                <p className="text-xl font-bold text-blue-600">{counters.totalBiodata}</p>
+                                <p className="text-xl font-bold ">{counters.totalBiodata}</p>
                             </div>
-                            <div className="bg-pink-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Girls</p>
-                                <p className="text-xl font-bold text-pink-600">{counters.totalGirls}</p>
+                                <p className="text-xl font-bold">{counters.totalGirls}</p>
                             </div>
-                            <div className="bg-green-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Boys</p>
-                                <p className="text-xl font-bold text-green-600">{counters.totalBoys}</p>
+                                <p className="text-xl font-bold ">{counters.totalBoys}</p>
                             </div>
-                            <div className="bg-orange-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Premium</p>
-                                <p className="text-xl font-bold text-yellow-600">{counters.totalPremium}</p>
+                                <p className="text-xl font-bold ">{counters.totalPremium}</p>
                             </div>
-                            <div className="bg-yellow-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Marriages</p>
-                                <p className="text-xl font-bold text-yellow-600">{counters.totalMarriages}</p>
+                                <p className="text-xl font-bold ">{counters.totalMarriages}</p>
                             </div>
 
-                            <div className="bg-yellow-100 rounded-lg p-4 shadow">
+                            <div className="bg-red-200 rounded-lg p-4 shadow">
                                 <p className="text-sm font-medium text-gray-600">Total Revenue</p>
-                                <p className="text-xl font-bold text-yellow-600">{counters.totalRevenue}</p>
+                                <p className="text-xl font-bold ">{counters.totalRevenue}</p>
                             </div>
                         </div>
                     </Card>

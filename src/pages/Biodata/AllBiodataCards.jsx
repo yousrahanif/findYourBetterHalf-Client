@@ -8,10 +8,10 @@ const AllBiodataCards = ({item}) => {
 
     return (
         <div> 
-               <Card
+               <Card className=' h-[400px]'
           
          >
-    <img src={profile_image} alt="Profile image" className="w-full h-[220px] object-cover" />
+    <img src={profile_image} alt="Profile image" className="mx-auto w-11/12 h-[150px] object-cover" />
   
     <a href="#">
     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">
@@ -19,21 +19,21 @@ const AllBiodataCards = ({item}) => {
     </h5>
   </a>
   <div className="mb-2 mt-2.5 flex flex-col items-center "> 
-    <div className="flex items-center mb-1"> 
+    {/* <div className="flex items-center mb-1"> 
       <p className="mr-2">Biodata Id: {bioId} </p>
     
-    </div>
-    <div className="flex items-center"> 
+    </div> */}
+    {/* <div className="flex items-center"> 
       <p className="mr-2">Gender: {biodata_type} </p>
-    </div>
+    </div> */}
     <div className="flex items-center"> 
       <p className="mr-2">Age: {age} </p>
     </div>
     <div className="flex items-center"> 
-      <p className="mr-2">Occupation: {occupation} </p>
+      <p className="mr-2">Career: {occupation} </p>
     </div>
     <div className="flex items-center"> 
-      <p className="mr-2">Permanent Division: {permanent_division} </p>
+      <p className="mr-2">Division: {permanent_division} </p>
     </div>
     </div>
            <div className="flex items-center justify-center">

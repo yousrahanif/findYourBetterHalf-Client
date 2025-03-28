@@ -72,7 +72,7 @@ const FavoriteBiodata = () => {
   }
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-10/12 mx-auto">
       <h1 className="text-3xl font-bold text-center p-4">Favorite Biodata</h1>
       
       <Table>

@@ -46,7 +46,7 @@ const ProfileData = () => {
 
   return (
     <div className="w-11/12 mx-auto text-center mt-8">
-      <h1 className="text-4xl font-extrabold text-white bg-red-600 py-3 rounded-md shadow-lg">
+      <h1 className="text-4xl font-extrabold text-white bg-red-700 py-3 rounded-md shadow-lg">
         {userType === 'admin' ? "Admin Profile" : "User Profile"}
       </h1>
 

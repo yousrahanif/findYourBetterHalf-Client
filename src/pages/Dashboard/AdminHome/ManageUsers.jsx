@@ -143,9 +143,9 @@ const ManageUsers = () => {
               <Table.Cell>
                 <div className="flex space-x-2">
                   {user.role !== 'admin' && (
-                    <Button
+                    <Button className='bg-red-500 text-black'
                       size="xs"
-                      color="purple"
+                     
                       onClick={() => handleAdmin(user._id)}
                     >
                       Make Admin
@@ -153,8 +153,9 @@ const ManageUsers = () => {
                   )}
                {premiumEmails.includes(user.email) && user.role !== 'premium' && (
                     <Button
+                    className='bg-red-500 text-black'
                       size="xs"
-                      color="green"
+                     
                       onClick={() => handleMakePremium(user.email)}
                     >
                       Make Premium

@@ -106,7 +106,7 @@ const ViewBiodata = () => {
   }
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="w-10/12 mx-auto">
       <h1 className="text-3xl font-bold text-center p-4">My Biodata</h1>
       <div className="space-y-6">
         {biodata.map((bio, index) => (

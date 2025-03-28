@@ -58,7 +58,7 @@ const GotMarried = () => {
   };
 
   return (
-    <div className="p-4 mx-auto w-11/12">
+    <div className="p-4 mx-auto w-10/12">
       <h2 className="text-4xl font-bold text-center mb-4">Share Your Story</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -143,7 +143,11 @@ const GotMarried = () => {
         </div>
 
         <div className="flex justify-center">
-          <Button type="submit" className="bg-blue-500">
+
+
+
+
+          <Button type="submit" className="bg-red-500 text-black">
             Submit
           </Button>
         </div>
